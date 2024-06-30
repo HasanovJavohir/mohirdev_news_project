@@ -1,0 +1,17 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Sport xabarlar {% endblock title %}
+
+{% block content %}
+
+    <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+        <h1>{{ news.category }}</h1>
+        {% for news in sport_news %}
+            <div class="article__title" style="font-weight: 600; font-size: 17.5px;">
+                <li><a href="{{ news.get_absolute_url }}">{{ news.title }}   <i style="font-size: 14px;">=> {{ news.publish_time }}</i></a></li><hr>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

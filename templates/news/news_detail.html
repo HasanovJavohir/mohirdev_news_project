@@ -1,0 +1,29 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} {{ news.title }} {% endblock title %}
+
+{% block content %}
+
+                <div class="container" style="text-align:center; margin: 50px;">
+                        <div class="article__category">
+                                <a href="{{ news.category.url }}" style="font-size: 20px; color: #1d76b9;">{{ news.category }}</a>
+                        </div>
+                        <div class="article__title" style="margin-bottom: 20px;">
+                                <h2 style="font-size: 1.7rem; font-weight: 400;">{{ news.title }}</h2>
+                        </div>
+                        <div class="article__img" style="border-radius: 5px; max-width: 100%;">
+                                <img src="{{ news.image.url }}" alt="">
+                        </div>
+                        <div class="article__body" style="font-weight: 500; margin-top: 24px;">
+                                <p style="font-size: 17.4px;">{{ news.body }}</p>
+                        </div>
+                </div>
+
+
+<!--        <h2>{{ news.title }}</h2>-->
+<!--        <h5>{{ news.publish_time }}</h5>-->
+<!--        <img src="{{ news.image.url }}" alt="">-->
+<!--        <p>{{ news.body }}</p>-->
+
+{% endblock content %}
